@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assessmentk8
+spec:
+  selector:
+    matchLabels:
+      name: assessmentk8
+  template:
+    metadata:
+      labels:
+        name: assessmentk8
+    spec:
+      containers:
+        - name: app
+          image: https://hub.docker.com/r/nginxdemos/hello/
+          ports:
+            - containerPort: 8080
